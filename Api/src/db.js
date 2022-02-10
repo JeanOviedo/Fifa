@@ -33,8 +33,8 @@ sequelize.models = Object.fromEntries(capsEntries);
 const { Players , Teams} = sequelize.models;
 
 // Aca vendrian las relaciones
-Players.belongsToMany(Tipo, {through: "players_teams"}); // 
-Teams.belongsToMany(Pokemon, {through: "players_teams"});
+Players.belongsToMany(Teams, {through: "players_teams"}); // 
+Teams.belongsToMany(Players, {through: "players_teams"});
 
 // Product.hasMany(Reviews);
 
