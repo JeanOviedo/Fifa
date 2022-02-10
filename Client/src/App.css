@@ -1,3 +1,7 @@
+body{
+ background-color: #32065c;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+.navbar {
+  display: flex;
+  padding: 1px;
+  background-color: #240046;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  z-index: 100;
+}
+
+.logo {
+  width: 80%;
+  position: relative;
+  left: 40px;
+  top: 2px;
+}
+
+.logodiv {
+  width: 20%;
 }
