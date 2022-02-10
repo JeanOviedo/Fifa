@@ -8,5 +8,22 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    position: {
+      type: DataTypes.STRING,
+      defaultValue: 0,
+    },
+    nation: {
+      type: DataTypes.STRING,
+      defaultValue: 0,
+    },
+    team: {
+      type: DataTypes.STRING,
+      defaultValue: 0,
+    },
+    img: {
+      type: DataTypes.STRING,
+      defaultValue: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Image_of_none.svg/1200px-Image_of_none.svg.png",
+    },
+   
   });
 };
