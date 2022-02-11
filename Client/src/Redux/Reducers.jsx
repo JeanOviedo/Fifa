@@ -9,7 +9,7 @@ export default function rooReducer(state = initialState, action) {
 
       return {
         ...state,
-        pagina: action.payload,
+        jugadores: action.payload,
       };
 
  default:
