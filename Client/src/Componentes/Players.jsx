@@ -37,7 +37,10 @@ useEffect(() => {
         
           {jugadores
             ? jugadores.map((jugadores) => (
-              <div className="card"><h1>{jugadores.name}</h1>
+              <div className="card">
+               <img src={jugadores.items.imgjugador} className="jugador" /><br/><br/>
+              <img src={jugadores.items.img} className="equipo"/><br/><br/>
+              <h1>{jugadores.items.name}</h1><br/><br/>
                 </div>
               ))
             : !jugadores

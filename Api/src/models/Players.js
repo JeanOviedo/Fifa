@@ -6,7 +6,7 @@ module.exports = (sequelize) => {
   sequelize.define('players', {
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+     
     },
     position: {
       type: DataTypes.STRING,
@@ -20,16 +20,31 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       defaultValue: 0,
     },
+    imgjugador: {
+      type: DataTypes.STRING,
+      defaultValue: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Image_of_none.svg/1200px-Image_of_none.svg.png",
+    },
+
     img: {
       type: DataTypes.STRING,
       defaultValue: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Image_of_none.svg/1200px-Image_of_none.svg.png",
     },
 
-    
     page: {
       type: DataTypes.INTEGER,
-      defaultValue: 1,
+    
     },
+
+    totalPages: {
+      type: DataTypes.INTEGER,
+     
+    },
+    totalResults: {
+      type: DataTypes.INTEGER,
+     
+    },
+
+  
    
   });
 };

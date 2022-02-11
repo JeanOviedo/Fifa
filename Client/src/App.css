@@ -29,8 +29,8 @@ a{
 }
 
 .card {
-  height: 265px;
-  width: 180px;
+  height: 165px;
+  width: 350px;
   background-color: #c77dff;
   border-radius: 2px;
   padding-top: 0em;
@@ -46,7 +46,7 @@ a{
 }
 
 .card h1 {
-  font-size: 15px;
+  font-size: 12px;
 }
 
 
@@ -100,11 +100,51 @@ a{
 }
 
 .menu a:hover {
-  background-color: #7a157e;
+  background-color: #4d0950;
   color: #191c32;
   transition: ease-in 0.3s;
   font-weight: bold;
   border-radius: 0.1em;
   z-index: 2;
   padding: 14px;
+}
+
+
+.footer {
+  background-color: #2d0c49;
+  color: white;
+  padding: 35px;
+  overflow: hidden;
+  height: 200%;
+  height: 200px;
+}
+
+.equipo {
+  width: 15%;
+ 
+  
+}
+
+
+.jugador {
+  width: 40%;
+  
+ 
+  
+}
+.ico {
+  width: 30px;
+  height: 30px;
+  margin: 7px;
+  cursor: pointer;
+}
+
+
+.footer a {
+  color: #ffffff;
+}
+
+.footer p {
+  color: #ffffff;
+  font-size: 88%;
 }
