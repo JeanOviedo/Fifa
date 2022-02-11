@@ -28,23 +28,23 @@ useEffect(() => {
 
   return (
     <Fragment>
+     <br/><br/>
+     <br/><br/>
      
-
-
-     <div key={Math.random(5)}  className="card">
+     <div key={Math.random(5)}  >
     
         
-        <div className="iconitos">
+        
           {jugadores
             ? jugadores.map((jugadores) => (
-              <h1>{jugadores.name}</h1>
-               
+              <div className="card"><h1>{jugadores.name}</h1>
+                </div>
               ))
             : !jugadores
             ? ""
             : ""}
         
-      </div>
+     
 
       <br />
     </div>

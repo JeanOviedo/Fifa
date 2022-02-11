@@ -1,24 +1,16 @@
-body{
- background-color: #32065c;
+
+body {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  overflow-x: hidden;
+  background-color: #32065c;
+  margin: 0;
 }
+
+
 
 a{
   color: #ffffff;
 
-}
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -36,16 +28,26 @@ a{
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+  height: 265px;
+  width: 180px;
+  background-color: #c77dff;
+  border-radius: 2px;
+  padding-top: 0em;
+  padding-left: 1.5%;
+  display: inline-flex;
+  margin: 2%;
+  text-align: center;
+  align-items: center;
+  transition: top ease 0.5s;
+  cursor: pointer;
+  text-decoration: none;
+  transition: ease-in 0.3s;
 }
 
-
+.card h1 {
+  font-size: 15px;
+}
 
 
 .navbar {
@@ -68,4 +70,41 @@ a{
 
 .logodiv {
   width: 20%;
+}
+
+.menu {
+  display: flex;
+}
+
+
+.menu li {
+  list-style: none;
+  margin: 0.3em;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  background-color:  #3a1c58;
+  transition: ease-in 0.3s;
+  font-weight: bold;
+  border-radius: 0.1em;
+  z-index: 2;
+  padding: 15px;
+
+}
+
+.menu .active {
+  color: #67696b;
+}
+
+.menu a:hover {
+  background-color: #7a157e;
+  color: #191c32;
+  transition: ease-in 0.3s;
+  font-weight: bold;
+  border-radius: 0.1em;
+  z-index: 2;
+  padding: 14px;
 }
