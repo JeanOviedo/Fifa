@@ -1,100 +1,183 @@
 const express = require("express");
-const {players, Players} = require("../db");
+const {General, Players} = require("../db");
 const router = express.Router();
 const axios = require("axios");
 
+
 router.use(express.json());
 
+
 router.get("/", async (req, res, next) => {
-    const {page} = req.query;
+    const {page, search} = req.query;
+
     try {
-        let PlayerCant = await Players.count();
-        // let playersBD = await Players.findAll();
+        if (!search) {
+            let PlayerCant = await Players.count();
+            if (PlayerCant === 0 ) {
+                let players = await axios.get(`https://www.easports.com/fifa/ultimate-team/api/fut/item?page=${page}`);
+                let playersApi = players.data.items;
+                let playersPage = players.data.page;
+                let playersTotalPage = players.data.totalPages;
+                let totalResults = players.data.totalResults;
+                // const ide = (new Date()).getTime().toString(36) + Math.random().toString(36).slice(2);
 
-        if (PlayerCant === 0 || page != "") {
-            let players = await axios.get(`https://www.easports.com/fifa/ultimate-team/api/fut/item?page=${page}`);
-            let playersApi = players.data.items;
-            let playersPage = players.data.page;
-            let playersTotalPage = players.data.totalPages;
-            let totalResults = players.data.totalResults;
-            // const ide = (new Date()).getTime().toString(36) + Math.random().toString(36).slice(2);
+                // si no es null o undefined o "" entonces guardo los players en la tabla players
+                if (playersApi) {
+                    playersApi = playersApi.map((t) => {
+                        return {
 
-            // si no es null o undefined o "" entonces guardo los players en la tabla players
-            if (playersApi) {
-                playersApi = playersApi.map((t) => {
+                        
+                            page: playersPage,
+                            totalPages: playersTotalPage,
+                            totalResults: totalResults,
+                            // page: page,
+                            items: {
+                                name: t.firstName.toLowerCase() + " " + t.lastName.toLowerCase(),
+                                position: t.position,
+                                nation: t.nation.abbrName,
+                                nationid: "https://fifastatic.fifaindex.com/FIFA21/images/flags/2/" + t.nation.id + ".png",
+                                team: t.club.abbrName,
+
+                                img: "https://fifastatic.fifaindex.com/FIFA22/teams/dark/" + t.club.id + ".png",
+                                imgjugador: "https://fifastatic.fifaindex.com/FIFA22/players/" + t.baseId + ".png"
+
+                            }
+                        };
+                    });
+                }
+
+
+                let playersEnApi = playersApi.map((e) => {
                     return {
-
-                        // id: t.id,
-                        // id :ide,
-                        page: playersPage ,
-                        totalPages: playersTotalPage,
-                        totalResults: totalResults,
-                        // page: page,
+                        page: e.page,
+                        totalPages: e.playersTotalPage,
+                        totalResults: e.totalResults,
                         items: {
-                            name: t.firstName + " " + t.lastName,
-                            position: t.position,
-                            nation: t.nation.abbrName,
-                            team: t.club.abbrName,
-                            img : "https://fifastatic.fifaindex.com/FIFA22/teams/dark/"+t.club.id+".png",
-                            imgjugador : "https://fifastatic.fifaindex.com/FIFA22/players/"+t.baseId+".png"
+                            name: e.items.name,
+                            position: e.items.position,
+                            nation: e.items.nation,
+                            nationid: e.items.nationid,
+                            team: e.items.team,
+                            img: e.items.img,
+                            imgjugador: e.items.imgjugador
 
                         }
                     };
+
                 });
-            }
 
-
-            let playersEnApi = playersApi.map((e) => {
-                return {
-                    page: e.page,
-                    totalPages: e.playersTotalPage,
-                    totalResults: e.totalResults,
-                    items: {
-                        name: e.items.name,
-                        position: e.items.position,
-                        nation: e.items.nation,
-                        team: e.items.team,
-                        img : e.items.img,
-                        imgjugador : e.items.imgjugador
-
+              
+                console.log("Cargado de api")
+                let sinduplicados = [...new Map(playersEnApi.map(itemlea => [itemlea.items.name, itemlea])).values()]
+                let arra = sinduplicados.map((e) =>  e.items.name).splice(0, 1, );
+                const PlayersBDSiExiste = await Players.findOne({
+                    where: {
+                        name: arra
                     }
-                };
+                })
 
-            });
-            console.log("Cargado de api")
-            let sinduplicados = [...new Map(playersEnApi.map(itemlea => [itemlea.items.name, itemlea])).values()]
-            await Players.bulkCreate(sinduplicados);
-            res.send((sinduplicados));
+            
+                if (PlayersBDSiExiste === null) { // await Players.bulkCreate(sinduplicados);
+                    sinduplicados.map((e) => {
+                        Players.create({
 
-        } else { // Si la cantidad es distinta de 0 entonces se obtienen los players de la tabla players
+                            name: e.items.name,
+                            position: e.items.position,
+                            nation: e.items.nation,
+                            team: e.items.team,
+                            img: e.items.img,
+                            imgjugador: e.items.imgjugador,
+                            nationid: e.items.nationid
 
-            let playersBD = await Players.findAll();
-            let playersEnBaseDatos = playersBD.map((e) => {
-                return { // id: e.id,
-                    page: e.page,
-                    totalPages: e.playersTotalPage,
-                    totalResults: e.totalResults,
-                    items: {
-                        name: e.items.name,
-                        position: e.items.position,
-                        nation: e.items.nation,
-                        team: e.items.team,
-                        img : e.items.img,
-                        imgjugador : e.items.imgjugador,
 
-                    }
+                        });
+
+                    })
+
+                    res.send((sinduplicados));
+                    console.log("se guardo en BD YA QUE NO EXISTE")
                 }
-            });
 
-            console.log("Cargado de BD")
-            // res.send(playersEnBaseDatos);
-            res.send(playersEnBaseDatos);
+
+            } else { // Si la cantidad es distinta de 0 entonces se obtienen los players de la tabla players
+
+                let playersBD = await Players.findAll();
+                let playersEnBaseDatos = playersBD.map((e) => {
+
+                    
+                    return { // id: e.id,
+                        page: e.page,
+                        totalPages: e.playersTotalPage,
+                        totalResults: e.totalResults,
+                        items: { 
+                            name: e.name,
+                            position: e.position,
+                            nation: e.nation,
+                            team: e.team,
+                            img: e.img,
+                            imgjugador: e.imgjugador,
+                            nationid: e.nationid
+                        }
+                        
+                    }
+                });
+
+                res.send(playersEnBaseDatos);
+            }
         }
     } catch (error) {
         console.log(error)
+        //next(error);
+    }
+   // });
+
+
+  // router.get("/", async (req, res, next) => {
+
+    try {
+        if (search) {
+            const Sequelize = require('sequelize');
+            const Op = Sequelize.Op;
+
+            // let searche = search.toLowerCase()
+            const PlayersBD = await Players.findAll({
+                where: {
+                    name: {
+                        [Op.like]: '%' + search + '%'
+                    }
+                }
+            })
+
+            if (PlayersBD != 0) {
+                let respuesta = PlayersBD.map((e) => {
+                    return {
+                        page: e.page,
+                        totalPages: e.playersTotalPage,
+                        totalResults: e.totalResults,
+                        items: {
+                            name: e.name,
+                            position: e.position,
+                            nation: e.nation,
+                            team: e.team,
+                            img: e.img,
+                            imgjugador: e.imgjugador,
+                            nationid: e.nationid
+                        }
+                    }
+                });
+                res.status(200).send(respuesta);
+            } else {
+                res.status(400).send("No encontrado");
+            }
+
+        }
+
+    } catch (error) {
         next(error);
     }
-});
+
+
+})
 
 
 module.exports = router;

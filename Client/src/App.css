@@ -29,12 +29,12 @@ a{
 }
 
 .card {
-  height: 165px;
-  width: 350px;
-  background-color: #c77dff;
+  height: 160px;
+  width: 335px;
+  background-color: #593475;
   border-radius: 2px;
   padding-top: 0em;
-  padding-left: 1.5%;
+  padding-left: 2.5%;
   display: inline-flex;
   margin: 2%;
   text-align: center;
@@ -46,19 +46,87 @@ a{
 }
 
 .card h1 {
-  font-size: 12px;
+  font-size: 9px;
+  color: #fafafa;
+  text-align: left;
+  margin: 2px;
+  text-transform: capitalize;
+}
+
+.card:hover {
+  top: -10px;
+  background-color: #200935;
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-transform: scale(1.10);
+  -moz-transform: scale(1.10);
+  -ms-transform: scale(1.10);
+  -o-transform: scale(1.10);
+  transform: scale(1.10);
+
+}
+
+.cuadro {
+  background-color: #fff;
+  border-radius: 5px;
+ 
+}
+
+.Search {
+ 
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  text-align: right;
+  height: 30px;
+  width: 539px;
+  padding-right: 7px;
+ 
+}
+
+.Search input {
+  
+
+ margin-top: -7px;
+  border-radius: 6.5px;
+  text-transform: capitalize;
+  text-align: right;
+  height: 32px;
+  width: 339px;
+ 
+  
+}
+
+
+.buscarboton {
+  margin-top: -5px;
+  width: 101px;
+  height: 37px;
+  text-align: center;
+  border-style: none;
+  cursor: pointer;
+  background-color: #3e215a;
+  color: white;
+
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 6.5px;
+  
+}
+
+.buscarboton:hover {
+  background-color: #7235ac;
 }
 
 
 .navbar {
   display: flex;
-  padding: 1px;
+  padding: 5px;
   background-color: #240046;
   position: fixed;
   left: 0px;
   top: 0px;
   right: 0px;
   z-index: 100;
+ 
 }
 
 .logo {
@@ -74,6 +142,7 @@ a{
 
 .menu {
   display: flex;
+ 
 }
 
 
@@ -91,7 +160,7 @@ a{
   font-weight: bold;
   border-radius: 0.1em;
   z-index: 2;
-  padding: 15px;
+  padding: 8px;
 
 }
 
@@ -121,13 +190,14 @@ a{
 
 .equipo {
   width: 15%;
- 
+  margin: 2px;
   
 }
 
 
 .jugador {
-  width: 40%;
+  width: 85%;
+  margin: 2px;
   
  
   

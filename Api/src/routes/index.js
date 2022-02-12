@@ -13,4 +13,5 @@ const router = Router();
 
 router.use('/players', PlayersRoute );
 router.use('/teams', TeamsRoute);
+
 module.exports = router;

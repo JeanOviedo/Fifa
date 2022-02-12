@@ -6,7 +6,7 @@ import Insta from "../../src/Icos/insta.png";
 import Web from "../../src/Icos/web.png";
 export default function Footer() {
     return (<div className="footer">
-        <h2>Proyecto Pokex</h2>
+        <h2>Proyecto Fifa</h2>
         <p>
             Realizado por{" "}
             <a href="https://www.jeanoviedo.com" target="_blank"><br></br><br></br>

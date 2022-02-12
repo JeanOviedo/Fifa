@@ -2,6 +2,7 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
+
 const {
   DB_USER, DB_PASSWORD, DB_HOST,
 } = process.env;
@@ -30,11 +31,15 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Players , Teams} = sequelize.models;
+const { Players , Teams , General} = sequelize.models;
 
 // Aca vendrian las relaciones
 Players.belongsToMany(Teams, {through: "players_teams"}); // 
-Teams.belongsToMany(Players, {through: "players_teams"});
+ Teams.belongsToMany(Players, {through: "players_teams"});
+
+Players.belongsToMany(General, {through: "players_general"}); // 
+ General.belongsToMany(Players, {through: "players_general"});
+
 
 // Product.hasMany(Reviews);
 

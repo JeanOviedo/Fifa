@@ -6,6 +6,7 @@ module.exports = (sequelize) => {
   sequelize.define('players', {
     name: {
       type: DataTypes.STRING,
+    
      
     },
     position: {
@@ -16,6 +17,12 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       defaultValue: 0,
     },
+
+    nationid: {
+      type: DataTypes.STRING,
+     
+    },
+
     team: {
       type: DataTypes.STRING,
       defaultValue: 0,
@@ -30,18 +37,9 @@ module.exports = (sequelize) => {
       defaultValue: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Image_of_none.svg/1200px-Image_of_none.svg.png",
     },
 
-    page: {
-      type: DataTypes.INTEGER,
-    
-    },
-
-    totalPages: {
-      type: DataTypes.INTEGER,
-     
-    },
-    totalResults: {
-      type: DataTypes.INTEGER,
-     
+    items: {
+      type: DataTypes.STRING,
+      defaultValue: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Image_of_none.svg/1200px-Image_of_none.svg.png",
     },
 
   

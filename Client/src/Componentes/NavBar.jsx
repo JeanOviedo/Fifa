@@ -25,7 +25,9 @@ export default function Navbar() {
           <li>
             <Link to="/contacto">Contacto</Link>
           </li>
+         <di className="Search"><input name="buscador"  value=""/> </di> <button className="buscarboton">Buscar</button>
         </ul>
+       
       </nav>
     </header>
   );
