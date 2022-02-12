@@ -1,18 +1,30 @@
-import {PLAYERS} from "./Actions.jsx";
+import {PLAYERS, BUSCAR} from "./Actions.jsx";
 const initialState = {
-    jugadores: []
+    jugadores: [],
+    buscado: [],
+    bucadocomponente : false
 }
 
 export default function rooReducer(state = initialState, action) {
     switch (action.type) {
-      case PLAYERS: 
+        case PLAYERS:
 
-      return {
-        ...state,
-        jugadores: action.payload,
-      };
+            return {
+                ... state,
+                jugadores: action.payload
+            };
 
- default:
-      return state;
-  }
+        case BUSCAR:
+
+            return {
+                ... state,
+                buscado: action.payload,
+                bucadocomponente : true
+
+            };
+
+
+        default:
+            return state;
+    }
 }

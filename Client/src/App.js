@@ -6,12 +6,17 @@ import Navbar from "./Componentes/NavBar";
 import Contacto from "./Componentes/Contacto";
 import Landing from "./Componentes/Landing";
 import Players from "./Componentes/Players";
+import Buscar from "./Componentes/Buscar"
 function App() {
+
   return (
     <Fragment>
-      <Navbar></Navbar>
+      <Navbar></Navbar><br></br><br></br><br></br><br></br>
+     
+     
 
       <Switch>
+   
         <Route exact path="/">
           <Landing />
         </Route>

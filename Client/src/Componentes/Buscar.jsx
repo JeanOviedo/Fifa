@@ -1,29 +1,11 @@
-import React, {Fragment, useEffect} from "react";
-import {ActionTodosPlayers, BUSCAR} from "../Redux/Actions";
+import React, {Fragment} from "react";
+import {ActionTodosPlayers} from "../Redux/Actions";
 import {useSelector, useDispatch} from "react-redux";
 
-import Buscar from "./Buscar"
-export default function Players() {
 
+export default function Buscar() {
 
-const dispatch = useDispatch();
-const jugadores = useSelector((state) => state.jugadores);
-const buscadocomponente  = useSelector((state) => state.buscadocomponente );
-useEffect(() => {
-
-  if (! jugadores.length ) {
-
-      
-      dispatch(ActionTodosPlayers());
-     
-
-
-  }
-}, [dispatch, jugadores]);
-
-
-
-
+const jugadores = useSelector((state) => state.buscado);
 
 
 
@@ -35,7 +17,7 @@ useEffect(() => {
      <div key={Math.random(5)}  >
     
         
-     { buscadocomponente === true ? <Buscar></Buscar> : ""}
+        
           {jugadores
             ? jugadores.map((jugadores) => (
               <div className="card">
