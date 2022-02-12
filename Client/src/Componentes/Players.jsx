@@ -1,5 +1,5 @@
 import React, {Fragment, useEffect} from "react";
-import {ActionTodosPlayers, BUSCAR} from "../Redux/Actions";
+import {ActionTodosPlayers} from "../Redux/Actions";
 import {useSelector, useDispatch} from "react-redux";
 
 import Buscar from "./Buscar"
@@ -30,7 +30,7 @@ useEffect(() => {
   return (
     <Fragment>
      <br/><br/>
-     <br/><br/>
+   
      
      <div key={Math.random(5)}  >
     
