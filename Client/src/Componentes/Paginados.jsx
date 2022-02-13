@@ -28,7 +28,7 @@ export default function Paginados() {
     
         <Fragment>
      
-        { !buscadocomponente ? (
+        { !buscadocomponente && !loading? (
 
 
 
