@@ -7,7 +7,7 @@ router.use(express.json());
 
 router.get("/", async (req, res, next) => {
   const { page, search, order } = req.query;
-  let orden ="name ASC";
+  //let orden ="name ASC";
 
   try {
     if (!search) {
@@ -17,8 +17,8 @@ router.get("/", async (req, res, next) => {
           `https://www.easports.com/fifa/ultimate-team/api/fut/item?page=${page}`
         );
         let playersApi = players.data.items;
-        let playersPage = players.data.page;
-        let playersTotalPage = players.data.totalPages;
+        let Page = players.data.page;
+        let totalPage = players.data.totalPages;
         let totalResults = players.data.totalResults;
         // const ide = (new Date()).getTime().toString(36) + Math.random().toString(36).slice(2);
 
@@ -26,8 +26,8 @@ router.get("/", async (req, res, next) => {
         if (playersApi) {
           playersApi = playersApi.map((t) => {
             return {
-              page: playersPage,
-              totalPages: playersTotalPage,
+              page: Page,
+              totalPages: totalPage,
               totalResults: totalResults,
               // page: page,
               items: {
@@ -53,11 +53,11 @@ router.get("/", async (req, res, next) => {
             };
           });
         }
-
+       
         let playersEnApi = playersApi.map((e) => {
           return {
-            page: e.page,
-            totalPages: e.playersTotalPage,
+            page: e.Page,
+            totalPages: e.totalPage,
             totalResults: e.totalResults,
             items: {
               name: e.items.name,
@@ -88,6 +88,9 @@ router.get("/", async (req, res, next) => {
           // await Players.bulkCreate(sinduplicados);
           sinduplicados.map((e) => {
             Players.create({
+              page: e.Page,
+              totalPages: e.totalPage,
+              totalResults: e.totalResults,
               name: e.items.name,
               position: e.items.position,
               nation: e.items.nation,
@@ -108,8 +111,8 @@ router.get("/", async (req, res, next) => {
         let playersEnBaseDatos = playersBD.map((e) => {
           return {
             // id: e.id,
-            page: e.page,
-            totalPages: e.playersTotalPage,
+            page: e.Page,
+            totalPages: e.totalPage,
             totalResults: e.totalResults,
             items: {
               name: e.name,
@@ -155,8 +158,8 @@ router.get("/", async (req, res, next) => {
       if (PlayersBD != 0) {
         let respuesta = PlayersBD.map((e) => {
           return {
-            page: e.page,
-            totalPages: e.playersTotalPage,
+            page: e.Page,
+            totalPages: e.totalPage,
             totalResults: e.totalResults,
             items: {
               name: e.name,

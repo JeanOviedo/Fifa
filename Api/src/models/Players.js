@@ -43,6 +43,22 @@ module.exports = (sequelize) => {
     },
 
   
+    page: {
+      type: DataTypes.INTEGER,
+    
+    },
+
+    totalPages: {
+      type: DataTypes.INTEGER,
+     
+    },
+    totalResults: {
+      type: DataTypes.INTEGER,
+     
+    },
+
+
+
    
   });
 };
