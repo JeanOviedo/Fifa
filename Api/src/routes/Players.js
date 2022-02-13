@@ -8,11 +8,14 @@ router.use(express.json());
 router.get("/", async (req, res, next) => {
   const { page, search, order } = req.query;
  
-
+ let PlayerCant = await Players.count();
+ let sinduplicados;
+      // // if (PlayerCant === 0) {
   try {
-    if (!search) {
+    if (!search  ) {
       // // let PlayerCant = await Players.count();
       // // if (PlayerCant === 0) {
+        
         let players = await axios.get(
           `https://www.easports.com/fifa/ultimate-team/api/fut/item?page=${page}`
         );
@@ -72,11 +75,7 @@ router.get("/", async (req, res, next) => {
         });
 
         console.log("Cargado de api");
-        let sinduplicados = [
-          ...new Map(
-            playersEnApi.map((itemlea) => [itemlea.items.name, itemlea])
-          ).values(),
-        ];
+        sinduplicados = [...new Map( playersEnApi.map((itemlea) => [itemlea.items.name, itemlea]) ).values(), ];
         let arra = sinduplicados.map((e) => e.items.name).splice(0, 1);
         const PlayersBDSiExiste = await Players.findOne({
           where: {
@@ -99,10 +98,11 @@ router.get("/", async (req, res, next) => {
               imgjugador: e.items.imgjugador,
               nationid: e.items.nationid,
             });
+            console.log("se guardo en BD YA QUE NO EXISTE");
           });
 
           res.send(sinduplicados);
-          console.log("se guardo en BD YA QUE NO EXISTE");
+         
         }
       //} 
       
@@ -128,8 +128,9 @@ router.get("/", async (req, res, next) => {
             },
           };
         });
-
-        res.send(playersEnBaseDatos);
+        console.log("NOO se guardo en BD YA EXISTE");
+        //res.send(playersEnBaseDatos); Muestra GUARDADOS EN BD
+        res.send(sinduplicados); //Muestra GUARDADOS EN API
       }
     }
   } catch (error) {
