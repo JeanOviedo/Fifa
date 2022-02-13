@@ -56,8 +56,8 @@ router.get("/", async (req, res, next) => {
        
         let playersEnApi = playersApi.map((e) => {
           return {
-            page: e.Page,
-            totalPages: e.totalPage,
+            page: e.page,
+            totalPages: e.totalPages,
             totalResults: e.totalResults,
             items: {
               name: e.items.name,
@@ -88,8 +88,8 @@ router.get("/", async (req, res, next) => {
           // await Players.bulkCreate(sinduplicados);
           sinduplicados.map((e) => {
             Players.create({
-              page: e.Page,
-              totalPages: e.totalPage,
+              page: e.page,
+              totalPages: e.totalPages,
               totalResults: e.totalResults,
               name: e.items.name,
               position: e.items.position,
@@ -111,8 +111,8 @@ router.get("/", async (req, res, next) => {
         let playersEnBaseDatos = playersBD.map((e) => {
           return {
             // id: e.id,
-            page: e.Page,
-            totalPages: e.totalPage,
+            page: e.page,
+            totalPages: e.totalPages,
             totalResults: e.totalResults,
             items: {
               name: e.name,
@@ -158,8 +158,8 @@ router.get("/", async (req, res, next) => {
       if (PlayersBD != 0) {
         let respuesta = PlayersBD.map((e) => {
           return {
-            page: e.Page,
-            totalPages: e.totalPage,
+            page: e.page,
+            totalPages: e.totalPages,
             totalResults: e.totalResults,
             items: {
               name: e.name,

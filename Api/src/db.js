@@ -37,8 +37,8 @@ const { Players , Teams , General} = sequelize.models;
 Players.belongsToMany(Teams, {through: "players_teams"}); // 
  Teams.belongsToMany(Players, {through: "players_teams"});
 
-Players.belongsToMany(General, {through: "players_general"}); // 
- General.belongsToMany(Players, {through: "players_general"});
+// Players.belongsToMany(General, {through: "players_general"}); // 
+//  General.belongsToMany(Players, {through: "players_general"});
 
 
 // Product.hasMany(Reviews);
