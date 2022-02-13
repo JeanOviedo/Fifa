@@ -7,12 +7,12 @@ router.use(express.json());
 
 router.get("/", async (req, res, next) => {
   const { page, search, order } = req.query;
-  //let orden ="name ASC";
+ 
 
   try {
     if (!search) {
-      let PlayerCant = await Players.count();
-      if (PlayerCant === 0) {
+      // // let PlayerCant = await Players.count();
+      // // if (PlayerCant === 0) {
         let players = await axios.get(
           `https://www.easports.com/fifa/ultimate-team/api/fut/item?page=${page}`
         );
@@ -104,9 +104,12 @@ router.get("/", async (req, res, next) => {
           res.send(sinduplicados);
           console.log("se guardo en BD YA QUE NO EXISTE");
         }
-      } else {
+      //} 
+      
+      else {
         // Si la cantidad es distinta de 0 entonces se obtienen los players de la tabla players
 
+       
         let playersBD = await Players.findAll();
         let playersEnBaseDatos = playersBD.map((e) => {
           return {
