@@ -131,6 +131,11 @@ a{
   background-color: #7235ac;
 }
 
+.load {
+  width: 30%;
+  color: white;
+
+}
 .buscarboton:disabled {
   background-color: #2b1f3a;
   cursor:not-allowed;

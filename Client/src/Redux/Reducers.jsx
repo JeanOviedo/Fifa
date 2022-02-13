@@ -1,11 +1,11 @@
-import {PLAYERS, BUSCAR, DISABLESEARCH} from "./Actions.jsx";
+import {PLAYERS, BUSCAR, DISABLESEARCH, LOADING} from "./Actions.jsx";
 const initialState = {
     jugadores: [],
     buscado: [],
     bucadocomponente: false,
     pagina: 1,
     paginas: 908,
-    loading : false,
+    loading : true,
 
 }
 
@@ -49,6 +49,13 @@ export default function rooReducer(state = initialState, action) {
                 ... state,
                 bucadocomponente: action.payload
             }
+
+            case LOADING:
+
+                return {
+                    ... state,
+                    loading: action.payload
+                }
 
         default:
             return state;

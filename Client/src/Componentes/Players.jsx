@@ -1,24 +1,25 @@
 import React, {Fragment, useEffect} from "react";
-import {ActionPagina, ActionTodosPlayers} from "../Redux/Actions";
+import {ActionPagina, ActionTodosPlayers, ActionLoading} from "../Redux/Actions";
 import {useSelector, useDispatch} from "react-redux";
 
 import Buscar from "./Buscar"
 import Paginados from "./Paginados";
+import Load from "./Load";
 export default function Players() {
 
 
 const dispatch = useDispatch();
 const jugadores = useSelector((state) => state.jugadores);
 const buscadocomponente  = useSelector((state) => state.buscadocomponente );
-
+const loading = useSelector((state) => state.loading);
 
 useEffect(() => {
 
   if (! jugadores.length ) {
 
-      
+    
       dispatch(ActionTodosPlayers());
-     
+    
     
 
   }
@@ -29,18 +30,18 @@ useEffect(() => {
     <Fragment>
      <br/>
    
-     
    
+  
 
 
      <div key={Math.random(5)}  >
     
         
-     
+     {loading===true ? <center><Load></Load> </center> : ""}
 
-
-     { buscadocomponente === true ? <Buscar></Buscar> :<Paginados></Paginados>}
-          {jugadores
+     { buscadocomponente === true && loading === false ? <Buscar></Buscar> :<Paginados></Paginados>}
+    
+          {jugadores && loading === false 
             ? jugadores.map((jugadores) => (
 
               <div className="card">
@@ -61,7 +62,8 @@ useEffect(() => {
             ? ""
             : ""}
         
-     
+      
+       
 
       <br />
     </div>

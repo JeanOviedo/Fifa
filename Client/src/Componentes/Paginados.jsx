@@ -1,24 +1,26 @@
 import React, { Fragment } from 'react'
-import {ActionPagina} from "../Redux/Actions";
+import {ActionPagina, ActionLoading} from "../Redux/Actions";
 import {useSelector, useDispatch} from "react-redux";
 
 
 export default function Paginados() {
     const dispatch = useDispatch();
-    
+    const loading = useSelector((state) => state.loading);
     const buscadocomponente = useSelector((state) => state.buscadocomponente);
     const pagina = useSelector((state) => state.pagina);
     const paginas = useSelector((state) => state.paginas);
 
 
     function handleSiguiente(evento) {
+        dispatch(ActionLoading(true));
         dispatch(ActionPagina(pagina+1));
-        
+        dispatch(ActionLoading(false));
         }
         
         function handleAtras(evento) {
+            dispatch(ActionLoading(true));
           dispatch(ActionPagina(pagina-1));
-          
+          dispatch(ActionLoading(false));
           }
         
 
@@ -26,14 +28,14 @@ export default function Paginados() {
     
         <Fragment>
      
-        { !buscadocomponente   ? (
+        { !buscadocomponente ? (
 
 
 
 
 
 <div className="paginado"> {
-        pagina > 1 ? <button className="buscarboton"
+        pagina > 1  ? <button className="buscarboton"
             onClick={
                 (evento) => {
                     handleAtras(evento);
@@ -42,7 +44,7 @@ export default function Paginados() {
     }
 
         {
-        pagina + 1 < paginas ? (<button className="buscarboton"
+        pagina + 1 < paginas   ? (<button className="buscarboton"
             onClick={
                 (evento) => {
                     handleSiguiente(evento);
