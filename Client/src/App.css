@@ -97,6 +97,20 @@ a{
 }
 
 
+.Search select {
+  
+
+  margin-top: -7px;
+   border-radius: 6.5px;
+   text-transform: capitalize;
+   text-align: left;
+   height: 32px;
+   
+   left: 23px;
+  
+   
+ }
+
 .buscarboton {
   margin-top: -5px;
   width: 101px;
@@ -104,19 +118,27 @@ a{
   text-align: center;
   border-style: none;
   cursor: pointer;
-  background-color: #3e215a;
+  background-color: #471d6e;
   color: white;
 
   font-size: 17px;
   font-weight: bold;
   border-radius: 6.5px;
-  
+  margin: 3px;
 }
 
 .buscarboton:hover {
   background-color: #7235ac;
 }
 
+.buscarboton:disabled {
+  background-color: #2b1f3a;
+  cursor:not-allowed;
+}
+
+.paginado {
+  text-align: center;
+}
 
 .navbar {
   display: flex;
