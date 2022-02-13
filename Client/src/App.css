@@ -118,14 +118,31 @@ a{
   text-align: center;
   border-style: none;
   cursor: pointer;
-  background-color: #471d6e;
+  background-color:  #3a1c58;
   color: white;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 3.5px;
+  margin: 3px;
+ 
+}
 
+.buscarboton2 {
+  margin-top: -5px;
+  width: 101px;
+  height: 37px;
+  text-align: center;
+  border-style: none;
+  cursor: pointer;
+  background-color: #25103a;
+  color: white;
   font-size: 17px;
   font-weight: bold;
   border-radius: 6.5px;
   margin: 3px;
+  border: solid 4px rgb(14, 1, 29);
 }
+
 
 .buscarboton:hover {
   background-color: #7235ac;
@@ -141,6 +158,39 @@ a{
   cursor:not-allowed;
 }
 
+
+.modal {
+
+  text-align: center;
+  margin: 2px;
+
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  top: 20%;
+  left: 27%;
+  width: 40%; /* Full width */
+  height: 70%; /* Full height */
+  overflow: none; /* Enable scroll if needed */
+  background-color: rgb(255, 255, 255); /* Fallback color */
+  border: 2px;
+  border-radius: 1em;
+  opacity: 98%;
+  text-transform: capitalize;
+  border-radius: 6.5px;
+ 
+}
+
+.card-image2 {
+  width: 70px;
+  height: 70px;
+  margin:2px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.modal h1 {
+  font-size: 16px;
+}
 .paginado {
   text-align: center;
 }

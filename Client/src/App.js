@@ -7,6 +7,7 @@ import Contacto from "./Componentes/Contacto";
 import Landing from "./Componentes/Landing";
 import Players from "./Componentes/Players";
 import Buscar from "./Componentes/Buscar"
+import Modal from "./Componentes/Modal";
 function App() {
 
   return (
@@ -21,6 +22,9 @@ function App() {
           <Landing />
         </Route>
 
+        <Route exact path="/modal">
+          <Modal />
+        </Route>
         <Route exact path="/players">
           <Players />
         </Route>

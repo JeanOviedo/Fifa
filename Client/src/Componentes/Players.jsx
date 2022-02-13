@@ -1,75 +1,80 @@
-import React, {Fragment, useEffect} from "react";
-import {ActionPagina, ActionTodosPlayers, ActionLoading} from "../Redux/Actions";
-import {useSelector, useDispatch} from "react-redux";
+import React, { Fragment, useEffect } from "react";
+import {
+  ActionModal,
+  ActionTodosPlayers,
+  ActionLoading,
+} from "../Redux/Actions";
+import { useSelector, useDispatch } from "react-redux";
 
-import Buscar from "./Buscar"
+import Buscar from "./Buscar";
 import Paginados from "./Paginados";
+import Modal from "./Modal";
 import Load from "./Load";
 export default function Players() {
+  const dispatch = useDispatch();
+  const jugadores = useSelector((state) => state.jugadores);
+  const buscadocomponente = useSelector((state) => state.buscadocomponente);
+  const loading = useSelector((state) => state.loading);
+  const modal = useSelector((state) => state.modal);
 
-
-const dispatch = useDispatch();
-const jugadores = useSelector((state) => state.jugadores);
-const buscadocomponente  = useSelector((state) => state.buscadocomponente );
-const loading = useSelector((state) => state.loading);
-
-useEffect(() => {
-
-  if (! jugadores.length ) {
-
-    
+  const namee = useSelector((state) => state.namee);
+  useEffect(() => {
+    if (!jugadores.length) {
       dispatch(ActionTodosPlayers());
-    
-    
+    }
+  }, [dispatch, jugadores]);
 
+  function handleClick(evento, data, datoname) {
+    evento.preventDefault();
+    dispatch(ActionModal(data, true, datoname));
+    console.log(data.items, "clik");
   }
-}, [dispatch, jugadores]);
-
 
   return (
     <Fragment>
-     <br/>
-   
-   
-  
-
-
-     <div key={Math.random(5)}  >
-    
-        
-     {loading===true ? <center><Load></Load> </center> : ""}
-
-     { buscadocomponente === true && loading === false ? <Buscar></Buscar> :<Paginados></Paginados>}
-    
-          {jugadores && loading === false 
-            ? jugadores.map((jugadores) => (
-
-              <div className="card">
-              <div className="cuadro"><br/><img src={jugadores.items.imgjugador} className="jugador" /><br/>
-               <img src={jugadores.items.nationid} />
-   
-              </div> <br/>
-              <img src={jugadores.items.img} className="equipo"/><br/><br/>
-              <h1>{jugadores.items.name}</h1><br/><br/>
-          
-
-          
-                </div>
-               
-           
-              ))
-            : !jugadores
-            ? ""
-            : ""}
-        
-      
-       
-
       <br />
-    </div>
 
-
-     
+      <div key={Math.random(5)}>
+      
+        {loading === true ? (
+          <center>
+            <Load></Load>{" "}
+          </center>
+        ) : (
+          ""
+        )}
+        {buscadocomponente === true && loading === false ? (
+          <Buscar></Buscar>
+        ) : (
+          <Paginados></Paginados>
+        )}
+        {modal === true ? <Modal /> : ""}
+        {jugadores && loading === false
+          ? jugadores.map((jugadores) => (
+              <div
+                className="card"
+                onClick={(event) => handleClick(event, jugadores.items)}
+              >
+                <div className="cuadro">
+                  <br />
+                  <img src={jugadores.items.imgjugador} className="jugador" />
+                  <br />
+                  <img src={jugadores.items.nationid} />
+                </div>{" "}
+                <br />
+                <img src={jugadores.items.img} className="equipo" />
+                <br />
+                <br />
+                <h1> {jugadores.items.name}</h1>
+                <br />
+                <br />
+              </div>
+            ))
+          : !jugadores
+          ? ""
+          : ""}
+        <br />
+      </div>
     </Fragment>
   );
 }
