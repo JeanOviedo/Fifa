@@ -307,6 +307,7 @@ color: beige;
 
 .menu {
   display: flex;
+  padding: 2px;
  
 }
 
@@ -383,3 +384,155 @@ color: beige;
   color: #ffffff;
   font-size: 88%;
 }
+
+
+@media only screen and (max-width: 850px) {
+
+
+
+
+  .navbar {
+    display: grid;
+    padding: 3px;
+    background-color: #240046;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 20px;
+    z-index: 100;
+    text-align: center;
+    width: 100%;
+   
+  }
+
+  .navbar li {
+    height: 23px;
+    text-align: center;
+  }
+
+  .logo {
+    width: 99%;
+    position:static;
+    left: 40px;
+    top: 2px;
+    text-align: center;
+    
+}
+
+
+.container {
+  display: inline-block;
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.Ima {
+  width: 160%;
+}
+
+.right {
+ 
+  margin: 2px;
+  width: 100%;
+  border-radius: 9px;
+  padding: 0em;
+  font-size: 15px;
+  color: beige;
+  text-align: center;
+}
+
+
+.izquierda {
+  width: 100%;
+}
+
+.derecha {
+  width: 81%;
+}
+.derecha h2 {
+  font-size: 18px;
+}
+.left {
+  margin: 2px;
+
+  
+  border-radius: 9px;
+  padding: 1em;
+  font-size: 20px;
+  color: beige;
+  text-align: center;
+  
+}
+
+
+.footer {
+  background-color: #2d0c49;
+  color: white;
+  padding: 5px;
+  overflow: hidden;
+  width: 130%;
+  margin: 10px;
+}
+
+.paginado {
+  text-align: center;
+  top: 20px;
+}
+
+.paginado {
+  margin: 41px;
+  align-items: center;
+  text-align: right;
+}
+
+.card {
+  height: 100%;
+  width: 120%;
+  background-color: #593475;
+  border-radius: 2px;
+  padding-top: 0em;
+  padding-left: 2.5%;
+  display: inline-flex;
+  margin: 2%;
+  text-align: center;
+  align-items: center;
+  transition: top ease 0.5s;
+  cursor: pointer;
+  text-decoration: none;
+  transition: ease-in 0.3s;
+}
+
+
+.jeanoviedo {
+  width: 77%;
+}
+.general {
+  color: white;
+  padding: 35px;
+  overflow: hidden;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
