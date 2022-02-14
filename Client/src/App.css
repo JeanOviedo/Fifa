@@ -392,7 +392,7 @@ color: beige;
 
 
   .navbar {
-    display: grid;
+    text-align: center;
     padding: 3px;
     background-color: #240046;
     position: fixed;
@@ -400,17 +400,19 @@ color: beige;
     top: 0px;
     right: 20px;
     z-index: 100;
-    text-align: center;
-    width: 100%;
+    text-align: left;
+   
+    display: inline-block;
    
   }
 
   .navbar li {
-    height: 23px;
+    
     text-align: center;
   }
 
   .logo {
+    
     width: 99%;
     position:static;
     left: 40px;
@@ -418,8 +420,27 @@ color: beige;
     text-align: center;
     
 }
+.logodiv {
+  width: 30%;
+  text-align: center;
+  display: inline-block;
+  height: 50%;
+}
 
 
+.menu {
+  height: 20px;
+  width: 100%;
+  font-size: 10px;
+  text-align: center;
+  margin: 11px;
+  }
+.logoder{
+ height: 100%;
+  align-items: center;
+  text-align: center;
+ 
+}
 .container {
   display: inline-block;
   align-items: center; 
@@ -443,6 +464,36 @@ color: beige;
   text-align: center;
 }
 
+
+.Search {
+  
+  margin: 2px;
+  width: 100%;
+  border-radius: 9px;
+  padding: 0em;
+  font-size: 15px;
+  color: beige;
+  text-align: left;
+  display:inline-table ;
+  float:left;
+}
+
+.Search2 {
+  
+  display:inline-table ;
+  width: 60%;
+  text-align: center;
+  float:left;
+}
+
+
+
+.Search input {
+  width: 80%;
+  text-align: center;
+ height: 24px;
+  float:left;
+}
 
 .izquierda {
   width: 100%;
@@ -470,26 +521,57 @@ color: beige;
 .footer {
   background-color: #2d0c49;
   color: white;
-  padding: 5px;
+  padding: 25px;
   overflow: hidden;
-  width: 130%;
-  margin: 10px;
+  width: 120%;
+  font-size: 15px;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  display: inline-block;
 }
 
+.footer p {
+  padding: 10px;
+  margin: 2em;
+}
+
+.footer2 {
+  padding: 10px;
+  margin: 2em;
+}
 .paginado {
   text-align: center;
   top: 20px;
 }
 
 .paginado {
-  margin: 41px;
+  margin: 1px;
   align-items: center;
-  text-align: right;
+  text-align: center;
+}
+
+.modal {
+  text-align: center;
+  margin: 2px;
+  position: fixed;
+  z-index: 100;
+  top: 20%;
+  left: 0%;
+  width: 75%;
+  height: 90%;
+  overflow: none;
+  background-color: rgb(255, 255, 255);
+  border: 2px;
+  border-radius: 1em;
+  opacity: 98%;
+  text-transform: capitalize;
+  border-radius: 6.5px;
 }
 
 .card {
   height: 100%;
-  width: 120%;
+  width: 90%;
   background-color: #593475;
   border-radius: 2px;
   padding-top: 0em;

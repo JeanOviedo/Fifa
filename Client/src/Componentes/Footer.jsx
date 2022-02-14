@@ -5,7 +5,7 @@ import Li from "../../src/Icos/linked.png";
 import Insta from "../../src/Icos/insta.png";
 import Web from "../../src/Icos/web.png";
 export default function Footer() {
-    return (<div className="footer">
+    return (<div className="footer"><div className="footer2">
         <h2>Proyecto Fifa</h2>
         <p>
             Realizado por{" "}
@@ -39,5 +39,5 @@ export default function Footer() {
                 className="ico"
                 alt="..."/>
         </a>
-    </div>);
+        </div></div>);
 }

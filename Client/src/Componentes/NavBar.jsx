@@ -47,7 +47,7 @@ export default function Navbar() {
                     <Link to="/contacto">Contacto</Link>
                 </li>
                
-                {location.pathname ==="/players"? ( <Fragment> <div className="Search">
+                {location.pathname ==="/players"? ( <Fragment> <div className="Search"><div className="Search2">
                
                   <input type = "text" placeholder ="Escriba el nombre del jugador a Buscar" name="buscador"
                         onChange={
@@ -60,7 +60,7 @@ export default function Navbar() {
                         <option value="api" >Api</option>
                       
                       </select> */}
-                </div>
+                </div> </div>
                 
             
                </Fragment> ) : ""}
