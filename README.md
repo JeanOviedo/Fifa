@@ -5,9 +5,10 @@ La app tiene un campo de búsqueda que permita realizar búsquedas de equipos po
 
  
  # Api : 
- Orden ascendente : http://localhost:3001/players?search=ma&order=asc  donde "ma" es la pabra a buscar. 
- Orden Descendente  : http://localhost:3001/players?search=ma&order=desc  donde "ma" es la pabra a buscar. 
- Muestra Jugadores de api y guarda en bd http://localhost:3001/players al igual que http://localhost:3001/players?page=8 donde 8 es el numero de la pagina.
+ Orden ascendente : GET http://localhost:3001/players?search=ma&order=asc  donde "ma" es la pabra a buscar. 
+ Orden Descendente  :  GET http://localhost:3001/players?search=ma&order=desc  donde "ma" es la pabra a buscar. 
+ Muestra Jugadores de api y guarda en bd :  GET http://localhost:3001/players al igual que http://localhost:3001/players?page=8 donde 8 es el numero de la pagina.
+ Muestra los equipos con sus jugadores  POST http://localhost:3001/teams  y GET http://localhost:3001/teams/get
  
  Es importante configurar las variables de entorno : por defecto esta configurado como 
  DB_USER=postgres
