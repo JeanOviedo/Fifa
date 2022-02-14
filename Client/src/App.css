@@ -110,6 +110,73 @@ a{
   
    
  }
+ .Ima {
+  width: 100%;
+}
+.Ima2 {
+  width: 46%;
+  margin: 1em;
+}
+
+ .jeanoviedo {
+  width: 37%;
+}
+.container {
+  display: flex;
+  margin: 4em;
+}
+.left {
+  margin: 10px;
+  width: 50%;
+}
+
+.right {
+  margin: 10px;
+  width: 45%;
+ 
+  border-radius: 9px;
+  padding: 1em;
+font-size: 35px;
+color: beige;
+}
+
+
+.izquierda  {
+  margin: 10px;
+  width: 60%;
+  background-color: #200935;
+  border-radius: 9px;
+  text-align: center;
+}
+
+.derecha {
+  margin: 10px;
+  width: 30%;
+ background-color: #200935;
+  border-radius: 9px;
+  padding: 1em;
+font-size: 35px;
+color: beige;
+
+}
+
+.derecha  h1{
+  font-size: 15px;
+}
+
+.derecha  p{
+  font-size: 14px;
+}
+
+ .general {
+  color: white;
+  padding: 35px;
+  overflow: hidden;
+  height: 200%;
+  height: 580px;
+  align-items: center;
+  text-align: center;
+}
 
 .buscarboton {
   margin-top: -5px;
@@ -125,6 +192,26 @@ a{
   border-radius: 3.5px;
   margin: 3px;
  
+}
+
+.boton {
+  margin-top: -5px;
+  width: 201px;
+  height: 39px;
+  text-align: center;
+  border-style: none;
+  cursor: pointer;
+  background-color:  #200935;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 3.5px;
+  margin: 3px;
+ 
+}
+
+.boton:hover {
+  background-color:  #280449; 
 }
 
 .buscarboton2 {
@@ -247,8 +334,8 @@ a{
 }
 
 .menu a:hover {
-  background-color: #4d0950;
-  color: #191c32;
+  background-color: #200935;
+  color: #763fb4;
   transition: ease-in 0.3s;
   font-weight: bold;
   border-radius: 0.1em;
