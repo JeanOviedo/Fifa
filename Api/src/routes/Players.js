@@ -231,5 +231,5 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.use(`/.netlify/functions/api`, router);
+
 module.exports = router;
