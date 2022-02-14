@@ -1,11 +1,12 @@
 const express = require("express");
-const { General, Players } = require("../db");
+const { Players } = require("../db");
 const router = express.Router();
 const axios = require("axios");
+//const jwt = require('express-jwt')
 
 router.use(express.json());
 
-router.get("/", async (req, res, next) => {
+router.get("/",  async (req, res, next) => {
   const { page, search, order } = req.query;
  
  let PlayerCant = await Players.count();
@@ -101,7 +102,10 @@ router.get("/", async (req, res, next) => {
             console.log("se guardo en BD YA QUE NO EXISTE");
           });
 
-          res.send(sinduplicados);
+
+            res.send(sinduplicados);
+         
+         
          
         }
       //} 

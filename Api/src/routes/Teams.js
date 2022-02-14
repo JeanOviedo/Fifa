@@ -4,6 +4,7 @@ const router = express.Router();
 const axios = require("axios");
 router.use(express.json());
 
+
 router.get("/get", async (req, res, next) => {
     try {
         let TeamCant = await Teams.count();
