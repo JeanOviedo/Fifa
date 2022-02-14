@@ -47,26 +47,37 @@ export default function Navbar() {
                     <Link to="/contacto">Contacto</Link>
                 </li>
                
-                {location.pathname ==="/players"? ( <Fragment> <div className="Search"><div className="Search2">
+                {location.pathname ==="/players"? ( <Fragment> <div className="Search">
                
                   <input type = "text" placeholder ="Escriba el nombre del jugador a Buscar" name="buscador"
                         onChange={
                             (event) => handleBuscar(event)
                         }
-                        // value={buscar}
+                       
                         />  
-                          {/* <select name="select">
-                        <option value="bd" selected >Bd</option>
-                        <option value="api" >Api</option>
-                      
-                      </select> */}
-                </div> </div>
+                          
+                </div> 
                 
             
                </Fragment> ) : ""}
                
                 {/* <button className="buscarboton">Buscar</button> */}
             </ul>
+
+            {location.pathname ==="/players"? ( <Fragment> <div className="Search2">
+               
+               <input type = "text" placeholder ="Escriba el nombre del jugador a Buscar" name="buscador"
+                     onChange={
+                         (event) => handleBuscar(event)
+                     }
+                    
+                     />  
+                       
+             </div> 
+             
+         
+            </Fragment> ) : ""}
+
 
         </nav>
     </header>);

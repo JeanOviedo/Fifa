@@ -33,7 +33,7 @@ export default function Modal()
 
 
 
-        <div key={Math.random(5)}  className="modal">
+        <div key={Math.random(5)}  className="modal" key={Math.random(5)}>
         <div>
         
           <h1>{ modaldata.name}</h1> 

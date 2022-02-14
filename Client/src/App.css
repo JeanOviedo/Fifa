@@ -160,6 +160,10 @@ color: beige;
 
 }
 
+.Search2 {
+  display: none;
+}
+
 .derecha  h1{
   font-size: 15px;
 }
@@ -386,23 +390,24 @@ color: beige;
 }
 
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 800px) {
 
 
 
 
   .navbar {
-    text-align: center;
+    
     padding: 3px;
     background-color: #240046;
     position: fixed;
     left: 0px;
     top: 0px;
-    right: 20px;
+    right: 0px;
     z-index: 100;
-    text-align: left;
-   
-    display: inline-block;
+  
+    text-align: left !important;
+    display:inline-block;
+    width: 100%;
    
   }
 
@@ -421,25 +426,30 @@ color: beige;
     
 }
 .logodiv {
-  width: 30%;
+  width: 29%;
   text-align: center;
   display: inline-block;
   height: 50%;
+  height: 100%;
 }
 
 
 .menu {
-  height: 20px;
-  width: 100%;
+  text-align: center !important;
   font-size: 10px;
-  text-align: center;
-  margin: 11px;
+  margin: 5px;
+ 
+  width: 50%;
   }
 .logoder{
  height: 100%;
-  align-items: center;
-  text-align: center;
+ text-align: center !important;
+
  
+}
+
+.buscarboton {
+ font-size: 14px;
 }
 .container {
   display: inline-block;
@@ -467,32 +477,29 @@ color: beige;
 
 .Search {
   
+  display: none;
+}
+
+.Search2 {
+  text-align: left;
   margin: 2px;
   width: 100%;
+ 
   border-radius: 9px;
   padding: 0em;
   font-size: 15px;
   color: beige;
-  text-align: left;
-  display:inline-table ;
-  float:left;
-}
-
-.Search2 {
   
-  display:inline-table ;
-  width: 60%;
-  text-align: center;
-  float:left;
+  display: inline-block;
+  
 }
 
 
+.Search2 input {
+  width: 73%;
 
-.Search input {
-  width: 80%;
-  text-align: center;
- height: 24px;
-  float:left;
+ height: 18px;
+  
 }
 
 .izquierda {

@@ -52,10 +52,10 @@ export default function Players() {
         {jugadores && loading === false
           ? jugadores.map((jugadores) => (
               <div
-                className="card"
+                className="card" key={Math.random(5)}
                 onClick={(event) => handleClick(event, jugadores.items)}
               >
-                <div className="cuadro">
+                <div className="cuadro" key={Math.random(5)}>
                   <br />
                   <img src={jugadores.items.imgjugador} className="jugador" />
                   <br />
