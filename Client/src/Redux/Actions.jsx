@@ -8,6 +8,7 @@ export const MODAL = "MODAL";
 const clave = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMDY3ODk5OTk5OSIsIm5hbWUiOiJKZWFuIE92aWVkbyIsImlhdCI6MTUxNjIzOTAyMn0.pZLVmIJYqsAsob26CBRWk5FS083TnKLqa8LY3ZvH0yY"
 
 
+  
 export function ActionTodosPlayers() {
     return async function (dispatch) {
         try { // http://localhost:3001/players?page=
