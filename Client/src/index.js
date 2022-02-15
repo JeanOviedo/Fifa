@@ -8,7 +8,7 @@ import Footer from "./Componentes/Footer";
 import { Provider } from "react-redux";
 import store from "./Redux/Store.jsx";
 
-
+<HashRouter></HashRouter>
 ReactDOM.render(
   <Provider store={store}>
     <Router basename={process.env.PUBLIC_URL}>

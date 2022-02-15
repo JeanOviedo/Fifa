@@ -8,16 +8,18 @@ import Landing from "./Componentes/Landing";
 import Players from "./Componentes/Players";
 import Buscar from "./Componentes/Buscar"
 import Modal from "./Componentes/Modal";
+
 function App() {
+
 
   return (
     <Fragment>
       <Navbar></Navbar><br></br><br></br><br></br><br></br>
      
-     
+      
 
       <Switch>
-   
+      <Route path="*" render={() => (<Redirect to="/" />)} />
         <Route exact path="/">
           <Landing />
         </Route>
