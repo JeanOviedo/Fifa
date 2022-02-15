@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.857ea9a2.css",
-    "main.js": "/static/js/main.36c3bae8.js",
-    "static/js/787.dce05bef.chunk.js": "/static/js/787.dce05bef.chunk.js",
-    "static/media/ok.png": "/static/media/ok.1141292af4f7fc6b2d1d.png",
-    "static/media/img-opacity50.png": "/static/media/img-opacity50.f3c4d104e553ac49082c.png",
-    "static/media/ok.webp": "/static/media/ok.22088d8ddb25181ec332.webp",
-    "static/media/loader.gif": "/static/media/loader.803f24369a085e35482e.gif",
-    "static/media/logo.png": "/static/media/logo.7ff395b1a15a9cf11e98.png",
-    "index.html": "/index.html",
-    "main.857ea9a2.css.map": "/static/css/main.857ea9a2.css.map",
-    "main.36c3bae8.js.map": "/static/js/main.36c3bae8.js.map",
-    "787.dce05bef.chunk.js.map": "/static/js/787.dce05bef.chunk.js.map"
+    "main.css": "/Fifa/static/css/main.857ea9a2.css",
+    "main.js": "/Fifa/static/js/main.4998ecc7.js",
+    "static/js/787.dce05bef.chunk.js": "/Fifa/static/js/787.dce05bef.chunk.js",
+    "static/media/ok.png": "/Fifa/static/media/ok.1141292af4f7fc6b2d1d.png",
+    "static/media/img-opacity50.png": "/Fifa/static/media/img-opacity50.f3c4d104e553ac49082c.png",
+    "static/media/ok.webp": "/Fifa/static/media/ok.22088d8ddb25181ec332.webp",
+    "static/media/loader.gif": "/Fifa/static/media/loader.803f24369a085e35482e.gif",
+    "static/media/logo.png": "/Fifa/static/media/logo.7ff395b1a15a9cf11e98.png",
+    "index.html": "/Fifa/index.html",
+    "main.857ea9a2.css.map": "/Fifa/static/css/main.857ea9a2.css.map",
+    "main.4998ecc7.js.map": "/Fifa/static/js/main.4998ecc7.js.map",
+    "787.dce05bef.chunk.js.map": "/Fifa/static/js/787.dce05bef.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.857ea9a2.css",
-    "static/js/main.36c3bae8.js"
+    "static/js/main.4998ecc7.js"
   ]
 }
