@@ -2,11 +2,13 @@ const express = require("express");
 const { Players } = require("../db");
 const router = express.Router();
 const axios = require("axios");
-//const jwt = require('express-jwt')
+const jwt = require('express-jwt')
+const secreto = jwt({ secret: process.env.SECRET, algorithms: ['HS256'] });
 
-router.use(express.json());
+//router.use(express.json());
 
-router.get("/",  async (req, res, next) => {
+
+router.get("/", secreto, async (req, res, next) => {
   const { page, search, order } = req.query;
  
  let PlayerCant = await Players.count();
@@ -75,7 +77,7 @@ router.get("/",  async (req, res, next) => {
           };
         });
 
-        console.log("Cargado de api");
+        console.log("Cargado de api" , playersEnApi );
         sinduplicados = [...new Map( playersEnApi.map((itemlea) => [itemlea.items.name, itemlea]) ).values(), ];
         let arra = sinduplicados.map((e) => e.items.name).splice(0, 1);
         const PlayersBDSiExiste = await Players.findOne({
@@ -103,7 +105,9 @@ router.get("/",  async (req, res, next) => {
           });
 
 
-            res.send(sinduplicados);
+          if (!req.user.name) return res.sendStatus(401).res.send(" NO AUTORIZADO");
+          if (req.user.name) return  res.send(sinduplicados);
+           // res.send(sinduplicados);
          
          
          
@@ -132,9 +136,12 @@ router.get("/",  async (req, res, next) => {
             },
           };
         });
-        console.log("NOO se guardo en BD YA EXISTE");
+      
         //res.send(playersEnBaseDatos); Muestra GUARDADOS EN BD
-        res.send(sinduplicados); //Muestra GUARDADOS EN API
+        //res.send(sinduplicados); //Muestra GUARDADOS EN API
+        if (!req.user.name) return res.sendStatus(401).res.send(" NO AUTORIZADO");
+          if (req.user.name) return  res.send(sinduplicados);
+          console.log("NOO se guardo en BD YA EXISTE",sinduplicados );
       }
     }
   } catch (error) {
@@ -224,7 +231,8 @@ router.get("/",  async (req, res, next) => {
 
 
         
-
+           if (!req.user.name) return res.sendStatus(401).res.send(" NO AUTORIZADO");
+           if (req.user.name) return     res.status(200).send(respuesta);
         res.status(200).send(respuesta);
       } else {
         res.status(400).send("No encontrado");

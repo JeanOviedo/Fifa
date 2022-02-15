@@ -3,9 +3,14 @@ const {Teams, Players} = require("../db");
 const router = express.Router();
 const axios = require("axios");
 router.use(express.json());
+const jwt = require('express-jwt')
+const secreto = jwt({ secret: process.env.SECRET, algorithms: ['HS256'] });
 
 
-router.get("/get", async (req, res, next) => {
+router.get("/get",
+secreto, 
+
+async (req, res, next) => {
     try {
         let TeamCant = await Teams.count();
         // cuenta los teams  en la tabla teams
@@ -82,8 +87,12 @@ router.get("/get", async (req, res, next) => {
                     });
                 });
 
-                res.send(sinduplicados);
-                console.log("se guardo en BD YA QUE NO EXISTE");
+                if (!req.user.name ) return res.sendStatus(401).res.send(" NO AUTORIZADO");
+                if (req.user.name) return  res.send(teamsEnBaseDatos);
+   
+                
+                //res.send(sinduplicados);
+               
             }
         } else { // Si la cantidad es distinta de 0 entonces se obtienen los teams de la tabla teams
 
@@ -114,7 +123,9 @@ router.get("/get", async (req, res, next) => {
 
             console.log("Cargado de BD");
             // res.send(teamsEnBaseDatos);
-            res.send(teamsEnBaseDatos);
+            if (!req.user.name) return res.sendStatus(401).res.send(" NO AUTORIZADO");
+            if (req.user.name) return  res.send(teamsEnBaseDatos);
+            //res.send(teamsEnBaseDatos);
         }
     } catch (error) {
         console.log(error);
@@ -127,7 +138,8 @@ router.get("/get", async (req, res, next) => {
 
 
 
-router.post("/", async (req, res, next) => {
+router.post("/", 
+secreto, async (req, res, next) => {
     try {
         let TeamCant = await Teams.count();
         // cuenta los teams  en la tabla teams
@@ -236,7 +248,9 @@ router.post("/", async (req, res, next) => {
 
             console.log("Cargado de BD");
             // res.send(teamsEnBaseDatos);
-            res.send(teamsEnBaseDatos);
+            if (!req.user.name) return res.sendStatus(401).res.send(" NO AUTORIZADO");
+            if (req.user.name) return  res.send(teamsEnBaseDatos);
+             //res.send(teamsEnBaseDatos);
         }
     } catch (error) {
         console.log(error);
