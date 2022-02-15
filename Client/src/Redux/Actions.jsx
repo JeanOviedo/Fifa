@@ -14,7 +14,7 @@ export function ActionTodosPlayers() {
         try { // http://localhost:3001/players?page=
 
             let response = await axios({
-              url: 'http://localhost:3001/players',
+              url: 'https://apififaok.herokuapp.com/players',
               method: 'get',
               headers: {
                 'Authorization': 'Bearer ' +clave,
@@ -48,7 +48,7 @@ export function ActionBuscar(buscar) {
             //let response = await axios("http://localhost:3001/players?search=" + buscar.toLowerCase());
 
             let response = await axios({
-              url: `http://localhost:3001/players?search=${buscar.toLowerCase()}`,
+              url: `https://apififaok.herokuapp.com/players?search=${buscar.toLowerCase()}`,
               method: 'get',
               headers: {
                 'Authorization': 'Bearer ' +clave,
@@ -82,7 +82,7 @@ export function ActionPagina(paginaok) {
         try {
             //let response = await axios("http://localhost:3001/players");
             let response = await axios({
-              url: 'http://localhost:3001/players ',
+              url: 'https://apififaok.herokuapp.com/players ',
               method: 'get',
               headers: {
                 'Authorization': 'Bearer ' +clave,
@@ -101,7 +101,7 @@ export function ActionPagina(paginaok) {
             let paginas = resultado[0].totalPages;
             //let response2 = await axios("http://localhost:3001/players?page=" + paginaok);
             let response2 = await axios({
-              url: 'http://localhost:3001/players?page=' + paginaok,
+              url: 'https://apififaok.herokuapp.com/players?page=' + paginaok,
               method: 'get',
               headers: {
                 'Authorization': 'Bearer ' +clave,
