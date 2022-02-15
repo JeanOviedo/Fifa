@@ -19,6 +19,7 @@ La app tiene un campo de búsqueda que permita realizar búsquedas de equipos po
  DB_USER=postgres
  DB_PASSWORD=123
  DB_HOST=localhost
+ SECRET=secretoo
 
 
 
