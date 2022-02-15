@@ -1,6 +1,7 @@
 {
   "name": "fifa",
   "version": "0.1.0",
+  "homepage":"https://jeanoviedo.github.io/Fifa",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
@@ -15,7 +16,7 @@
     "redux-thunk": "^2.4.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://jeanoviedo.github.io/Fifa",
+ 
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
