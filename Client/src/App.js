@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 
 import './App.css';
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch,Redirect } from "react-router-dom";
 import Navbar from "./Componentes/NavBar";
 import Contacto from "./Componentes/Contacto";
 import Landing from "./Componentes/Landing";
@@ -19,7 +19,7 @@ function App() {
       
 
       <Switch>
-      <Route path="*" render={() => (<Redirect to="/" />)} />
+      
         <Route exact path="/">
           <Landing />
         </Route>
@@ -33,7 +33,8 @@ function App() {
         <Route exact path="/contacto">
           <Contacto />
         </Route>
-      
+        <Route path="*" render={() => (<Redirect to="/" />)} />
+
         
       </Switch>
     </Fragment>
