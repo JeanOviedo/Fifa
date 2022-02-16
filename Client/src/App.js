@@ -33,8 +33,7 @@ function App() {
         <Route exact path="/contacto">
           <Contacto />
         </Route>
-        <Route path="*" render={() => (<Redirect to="/" />)} />
-
+       
         
       </Switch>
     </Fragment>
