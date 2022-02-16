@@ -439,10 +439,9 @@ color: beige;
 
 .menu {
   text-align: center !important;
-  font-size: 10px;
-  margin: 5px;
- 
-  width: 50%;
+    font-size: 13px;
+    margin: 10px;
+    width: 50%;
   }
 .logoder{
  height: 100%;
@@ -500,8 +499,8 @@ color: beige;
 
 
 .Search2 input {
-  width: 73%;
-  height: 18px;
+  width: 95%;
+    height: 31px;
   
 }
 
