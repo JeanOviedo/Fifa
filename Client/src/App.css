@@ -563,21 +563,20 @@ color: beige;
 }
 
 .modal {
-  text-align: center;
-  margin: 2px;
-  position: fixed;
-  z-index: 100;
-  top: 20%;
-  left: 0%;
-  width: 75%;
-  height: 90%;
-  overflow: none;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
   border: 2px;
   border-radius: 1em;
-  opacity: 98%;
-  text-transform: capitalize;
   border-radius: 6.5px;
+  height: 91%;
+  left: 0;
+  margin: -1px;
+  opacity: 98%;
+  overflow: none;
+  position: fixed;
+  text-transform: capitalize;
+  top: 4%;
+  width: 108%;
+  z-index: 100;
 }
 
 .card {
