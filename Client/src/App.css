@@ -602,9 +602,9 @@ color: beige;
 }
 .general {
   color: white;
-  padding: 35px;
+  padding: 15px;
   overflow: hidden;
-  width: 100%;
+  width: 90%;
   align-items: center;
   text-align: center;
 }
