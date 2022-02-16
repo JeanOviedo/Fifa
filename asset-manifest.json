@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Fifa/static/css/main.93b78ac9.css",
+    "main.css": "/Fifa/static/css/main.2e6e40e7.css",
     "main.js": "/Fifa/static/js/main.4998ecc7.js",
     "static/js/787.dce05bef.chunk.js": "/Fifa/static/js/787.dce05bef.chunk.js",
     "static/media/ok.png": "/Fifa/static/media/ok.1141292af4f7fc6b2d1d.png",
@@ -9,12 +9,12 @@
     "static/media/loader.gif": "/Fifa/static/media/loader.803f24369a085e35482e.gif",
     "static/media/logo.png": "/Fifa/static/media/logo.7ff395b1a15a9cf11e98.png",
     "index.html": "/Fifa/index.html",
-    "main.93b78ac9.css.map": "/Fifa/static/css/main.93b78ac9.css.map",
+    "main.2e6e40e7.css.map": "/Fifa/static/css/main.2e6e40e7.css.map",
     "main.4998ecc7.js.map": "/Fifa/static/js/main.4998ecc7.js.map",
     "787.dce05bef.chunk.js.map": "/Fifa/static/js/787.dce05bef.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.93b78ac9.css",
+    "static/css/main.2e6e40e7.css",
     "static/js/main.4998ecc7.js"
   ]
 }
