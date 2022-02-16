@@ -530,14 +530,15 @@ color: beige;
 
 .footer {
   background-color: #2d0c49;
-  color: white;
-  padding: 25px;
-  overflow: hidden;
-  width: 120%;
-  font-size: 15px;
-  height: 100%;
-  align-items: center;
-  text-align: center;
+    color: white;
+    padding: 0px;
+    overflow: hidden;
+    width: 100%;
+    font-size: 15px;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    display: inline-block;
   display: inline-block;
 }
 
