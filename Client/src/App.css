@@ -459,7 +459,8 @@ color: beige;
   align-items: center; 
   justify-content: center;
   text-align: center;
-  width: 83%;
+  width: 95%;
+  margin: 1px;
 }
 
 .Ima {
