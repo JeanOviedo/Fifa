@@ -393,7 +393,10 @@ color: beige;
 @media only screen and (max-width: 800px) {
 
 
-
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
   .navbar {
     
@@ -436,10 +439,9 @@ color: beige;
 
 .menu {
   text-align: center !important;
-  font-size: 10px;
-  margin: 5px;
- 
-  width: 50%;
+    font-size: 13px;
+    margin: 10px;
+    width: 50%;
   }
 .logoder{
  height: 100%;
@@ -456,7 +458,8 @@ color: beige;
   align-items: center; 
   justify-content: center;
   text-align: center;
-  width: 100%;
+  width: 95%;
+  margin: 1px;
 }
 
 .Ima {
@@ -496,9 +499,8 @@ color: beige;
 
 
 .Search2 input {
-  width: 73%;
-
- height: 18px;
+  width: 95%;
+    height: 31px;
   
 }
 
@@ -527,14 +529,15 @@ color: beige;
 
 .footer {
   background-color: #2d0c49;
-  color: white;
-  padding: 25px;
-  overflow: hidden;
-  width: 120%;
-  font-size: 15px;
-  height: 100%;
-  align-items: center;
-  text-align: center;
+    color: white;
+    padding: 0px;
+    overflow: hidden;
+    width: 100%;
+    font-size: 15px;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    display: inline-block;
   display: inline-block;
 }
 
@@ -550,6 +553,7 @@ color: beige;
 .paginado {
   text-align: center;
   top: 20px;
+  padding-top: 50px;
 }
 
 .paginado {
@@ -559,21 +563,20 @@ color: beige;
 }
 
 .modal {
-  text-align: center;
-  margin: 2px;
-  position: fixed;
-  z-index: 100;
-  top: 20%;
-  left: 0%;
-  width: 75%;
-  height: 90%;
-  overflow: none;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
   border: 2px;
   border-radius: 1em;
-  opacity: 98%;
-  text-transform: capitalize;
   border-radius: 6.5px;
+  height: 91%;
+  left: 0;
+  margin: -1px;
+  opacity: 98%;
+  overflow: none;
+  position: fixed;
+  text-transform: capitalize;
+  top: 4%;
+  width: 108%;
+  z-index: 100;
 }
 
 .card {
@@ -599,16 +602,14 @@ color: beige;
 }
 .general {
   color: white;
-  padding: 35px;
+  padding: 15px;
   overflow: hidden;
-  width: 100%;
+  width: 90%;
   align-items: center;
   text-align: center;
 }
 
 }
-
-
 
 
 
